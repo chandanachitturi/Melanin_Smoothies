@@ -1,5 +1,6 @@
 # Import python packages
 import streamlit as st
+import requests
 from snowflake.snowpark.functions import col
 from requests.exceptions import JSONDecodeError
 
@@ -49,8 +50,7 @@ if ingredients_list:
 
 
 
-import requests
-from requests.exceptions import JSONDecodeError
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response)
 
