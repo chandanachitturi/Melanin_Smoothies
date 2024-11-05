@@ -51,7 +51,7 @@ if ingredients_list:
 
 
 
-fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/all")
+fruityvice_response = requests.get("http://fruitmap.org/api/trees")
 st.text(fruityvice_response)
 
 # try:
