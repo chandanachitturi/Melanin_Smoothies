@@ -52,7 +52,7 @@ if ingredients_list:
 
 
 fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/all")
-st.text(ruityvice_response)
+st.text(fruityvice_response)
 
 # try:
 #     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
