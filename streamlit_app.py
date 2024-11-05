@@ -52,7 +52,7 @@ if ingredients_list:
 import requests
 from requests.exceptions import JSONDecodeError
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-fv_df=st.dataframe(data=fruityvice_response,use_container_width=true)
+st.text(fruityvice_response)
 
 # try:
 #     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
