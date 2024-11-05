@@ -32,7 +32,9 @@ if ingredients_list:
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-
+        st.subheader(fruit_chosen+' Nutrition Informatation')
+        fruityvice_response = requests.get("http://fruitmap.org/api/trees"+fruit_chosen)
+        fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
     #st.write(ingredients_string)
 
 
@@ -51,16 +53,6 @@ if ingredients_list:
 
 
 
-fruityvice_response = requests.get("http://fruitmap.org/api/trees")
-fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
 
-# try:
-#     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-#     data = fruityvice_response.json()  # This might raise JSONDecodeError
-#     st.write(data)  # Display JSON data in Streamlit
-#     fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=true)
-# except JSONDecodeError:
-#     st.error("Failed to decode JSON from the response.")
-#     st.write("Response Text:", fruityvice_response.text)  # Optional: show response text for debugging
-# except Exception as e:
-#     st.error(f"An error occurred: {e}")
+
+
