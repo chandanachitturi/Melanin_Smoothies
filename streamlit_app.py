@@ -48,8 +48,17 @@ if ingredients_list:
         st.success('Your Smoothie is ordered!', icon="✅")
 
 
+
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=true)
+from requests.exceptions import JSONDecodeError
 
-
+try:
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+    data = fruityvice_response.json()  # This might raise JSONDecodeError
+    st.write(data)  # Display JSON data in Streamlit
+    fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=true)
+except JSONDecodeError:
+    st.error("Failed to decode JSON from the response.")
+    st.write("Response Text:", response.text)  # Optional: show response text for debugging
+except Exception as e:
+    st.error(f"An error occurred: {e}")
