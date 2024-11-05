@@ -52,7 +52,7 @@ if ingredients_list:
 
 
 fruityvice_response = requests.get("http://fruitmap.org/api/trees")
-fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=true)
+fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
 
 # try:
 #     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
