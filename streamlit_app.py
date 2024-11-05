@@ -1,7 +1,7 @@
 # Import python packages
 import streamlit as st
 from snowflake.snowpark.functions import col
-
+from requests.exceptions import JSONDecodeError
 
 name_on_order = st.text_input("Name on Smoothie")
 st.write("Your smoothie is", name_on_order)
