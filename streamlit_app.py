@@ -59,6 +59,6 @@ try:
     fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=true)
 except JSONDecodeError:
     st.error("Failed to decode JSON from the response.")
-    st.write("Response Text:", response.text)  # Optional: show response text for debugging
+    st.write("Response Text:", fruityvice_response.text)  # Optional: show response text for debugging
 except Exception as e:
     st.error(f"An error occurred: {e}")
